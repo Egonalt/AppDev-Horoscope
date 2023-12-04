@@ -1,0 +1,38 @@
+<!-- app/views/astro_templates/show.html.erb -->
+
+<div class="container">
+  <h1 style="text-align: center;">Astrological Details</h1>
+
+  <% if @astro_details.blank? %>
+    <p style="text-align: center;">No astrological details available.</p>
+  <% else %>
+    <table class="astro-table">
+      <thead>
+        <tr>
+          <th>Detail</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @astro_details.each do |key, value| %>
+          <% unless ['friendly_num', 'neutral_num', 'radical_num', 'radical_ruler'].include?(key) %>
+            <tr>
+              <td>
+                <%= key.to_s.humanize.gsub('Fav ', 'Favorite ').gsub('Evil num', 'Evil Number') %>
+              </td>
+              <td>
+                <% if key == 'evil_num' %>
+                  <%= value.split(',').first.strip %>
+                <% else %>
+                  <%= value %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <%= link_to 'Back to Home', root_path, class: 'btn btn-home', style: "display: block; margin: auto; text-align: center;" %>
+</div>

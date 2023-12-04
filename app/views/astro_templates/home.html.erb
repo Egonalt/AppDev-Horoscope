@@ -1,0 +1,58 @@
+<!-- /workspaces/AppDev-Horoscope/app/views/astro_templates/home.html.erb -->
+
+<div class="container">
+  <h1>Welcome to the Horo-Stock App</h1>
+
+  <%= form_with(url: '/astro', method: :get, class: "home-form") do |form| %>
+
+    <div class="form-group">
+      <%= form.label :day, 'Day:' %>
+      <%= form.number_field :day, in: 1..31, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :month, 'Month:' %>
+      <%= form.number_field :month, in: 1..12, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :year, 'Year:' %>
+      <%= form.number_field :year, min: 1900, max: 2100, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :hour, 'Hour (0-23):' %>
+      <%= form.number_field :hour, in: 0..23, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :min, 'Minute:' %>
+      <%= form.number_field :min, in: 0..59, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :name, 'Name:' %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :lat, 'Latitude:' %>
+      <%= form.text_field :lat, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :lon, 'Longitude:' %>
+      <%= form.text_field :lon, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :tzone, 'Time Zone:' %>
+      <%= form.text_field :tzone, class: "form-control" %>
+    </div>
+
+    <div class="form-group" style="margin-top: 20px;">
+      <%= form.submit 'Get Astrological Details', class: "btn btn-home" %>
+    </div>
+    
+  <% end %>
+</div>

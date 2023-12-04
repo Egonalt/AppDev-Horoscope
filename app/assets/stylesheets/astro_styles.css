@@ -1,0 +1,79 @@
+/* General button styling */
+.btn {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Specific style for home button */
+.btn-home {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+  background-color: #3e8e41;
+  color: #fff;
+}
+
+/* Form styling */
+.form-control {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Container for form and results */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.astro-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.astro-table th,
+.astro-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.astro-table th {
+  background-color: #f2f2f2;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .astro-table {
+    font-size: 14px;
+  }
+}
