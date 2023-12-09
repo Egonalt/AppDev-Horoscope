@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new', as: 'signin'
   post '/sessions', to: 'sessions#create'
   get 'users/:id/stocks', to: 'users#stocks', as: :user_stocks
+  get 'login', to: 'sessions#new', as: :login
+  post 'login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   
 end

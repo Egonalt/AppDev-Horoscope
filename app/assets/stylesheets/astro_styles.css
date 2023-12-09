@@ -1,4 +1,4 @@
-/* General button styling */
+
 .btn {
   padding: 10px 20px;
   text-align: center;
@@ -12,19 +12,19 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Specific style for home button */
+
 .btn-home {
   background-color: #4CAF50;
   color: white;
 }
 
-/* Hover effect for buttons */
+
 .btn:hover {
   background-color: #3e8e41;
   color: #fff;
 }
 
-/* Form styling */
+
 .form-control {
   width: 100%;
   padding: 8px 10px;
@@ -35,7 +35,7 @@
   box-sizing: border-box;
 }
 
-/* Container for form and results */
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -44,7 +44,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Table styling */
+
 .astro-table {
   width: 100%;
   margin-top: 20px;
