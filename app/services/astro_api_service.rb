@@ -11,9 +11,10 @@ class AstroApiService
 
     request = Net::HTTP::Post.new(url)
     request["content-type"] = 'application/json'
-    request["X-RapidAPI-Key"] = ENV['RAPIDAPI_KEY']
+    request["X-RapidAPI-Key"] = ENV['RAPIDAPI_KEY'] 
     request["X-RapidAPI-Host"] = 'vedicrishi-horoscope-matching-v1.p.rapidapi.com'
-    request.body = {
+
+    request_body = {
       day: day,
       month: month,
       year: year,
@@ -23,13 +24,13 @@ class AstroApiService
       lat: lat,
       lon: lon,
       tzone: tzone
-    }.to_json
+    }
+    request.body = request_body.to_json
 
     response = http.request(request)
-    Rails.logger.info "API Response: #{response.body}"
     JSON.parse(response.read_body)
   rescue StandardError => e
-    Rails.logger.error "API Error: #{e.message}"
+    # Handle any exceptions
     { error: e.message }
   end
 end

@@ -18,7 +18,7 @@
           <% unless ['friendly_num', 'neutral_num', 'radical_num', 'radical_ruler'].include?(key) %>
             <tr>
               <td>
-                <%= key.to_s.humanize.gsub('Fav ', 'Favorite ').gsub('Evil num', 'Evil Number') %>
+                <%= key.to_s.humanize.gsub('Fav ', 'Favorite ').gsub('Evil num', 'Evil number') %>
               </td>
               <td>
                 <% if key == 'evil_num' %>
@@ -30,14 +30,15 @@
             </tr>
           <% end %>
         <% end %>
-        <!-- Additional row for Stock Ticker -->
         <tr>
-          <td>Stock Ticker</td>
+          <td>Lucky Stock Picks</td>
           <td><%= @random_ticker %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
-
-  <%= link_to 'Back to Home', root_path, class: 'btn btn-home', style: "display: block; margin: auto; text-align: center;" %>
+<% if current_user %>
+  <%= link_to 'My Stocks', user_stocks_path(current_user), class: 'btn-my-stocks' %>
+<% end %>
+  <%= link_to 'Back to Home', astro_home_path, class: 'btn btn-home' %>
 </div>

@@ -1,0 +1,37 @@
+<!-- app/views/users/new.html.erb -->
+
+<div class="auth-form-container">
+  <h1 class="auth-form-title">Sign Up for Horo-Stock!</h1>
+
+  <%= form_with(model: @user, url: users_path, local: true, html: { class: "auth-form" }) do |form| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation, "Confirm Password" %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+
+    <div>
+      <%= form.submit "Create Account", class: "btn-submit" %>
+    </div>
+  <% end %>
+</div>

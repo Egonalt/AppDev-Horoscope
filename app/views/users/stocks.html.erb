@@ -1,0 +1,24 @@
+<!-- app/views/users/stocks.html.erb -->
+
+<div class="stocks-container">
+  <h1><%= @user.username %>'s Selected Stocks</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Stock Ticker</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @unique_tickers.each do |ticker| %>
+        <tr>
+          <td><%= ticker %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="navigation-buttons">
+    <%= link_to 'Back to Results', astro_show_path, class: 'btn btn-back' %>
+    <%= link_to 'New Horoscope', astro_home_path, class: 'btn btn-new' %>
+  </div>
+</div>
